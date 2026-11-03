@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Abdu & Ayu</title>
+
+    <!-- Open Graph / WhatsApp Preview Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Undangan Pernikahan Abdu & Ayu">
+    <meta property="og:description" content="Senin & Selasa, 28 - 29 Desember 2026. Kehadiran dan doa restu Anda merupakan kehormatan dan kebahagiaan bagi kami.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/d/1LasbUeGU7aDYjghESLmzm852XamPEyu3=w1000">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="667">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Undangan Pernikahan Abdu & Ayu">
+    <meta name="twitter:description" content="Senin & Selasa, 28 - 29 Desember 2026. Kehadiran dan doa restu Anda merupakan kehormatan dan kebahagiaan bagi kami.">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1LasbUeGU7aDYjghESLmzm852XamPEyu3=w1000">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        skyWarm: '#eef6fb',
+                        skySoft: '#d4eaf7',
+                        skyAccent: '#70a9c7',
+                        skyDeep: '#1e3a5f',
+                        goldSoft: '#d4af37',
+                        warmBg: '#fcfbfa',
+                        warmCard: '#ffffff'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 234, 247, 0.6);
+        }
+        .bg-pattern {
+            background-color: #fcfbfa;
+            background-image: radial-gradient(#d4eaf7 0.75px, transparent 0.75px), radial-gradient(#d4eaf7 0.75px, #fcfbfa 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+        .animate-float {
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.08); }
+        }
+        .animate-glow {
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        .petal {
+            position: absolute;
+            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+            border-radius: 150% 0 150% 0;
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 25;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% {
+                top: -10%;
+                transform: translateX(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                top: 105%;
+                transform: translateX(80px) rotate(360deg);
+                opacity: 0.2;
+            }
+        }
+
+        .ambient-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .gold-border-overlay {
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            outline: 1px solid rgba(212, 175, 55, 0.15);
+            outline-offset: -6px;
+        }
+    </style>
+</head>
+<body class="font-sans text-skyDeep bg-warmBg antialiased selection:bg-skySoft selection:text-skyDeep overflow-x-hidden">
+
+    <!-- AUDIO MP3 LANGSUNG DARI CATBOX -->
+    <audio id="wedding-audio" loop preload="auto">
+        <source src="https://files.catbox.moe/6uvxqf.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- FLOATING MUSIC TOGGLE BUTTON -->
+    <div id="music-container" class="fixed bottom-6 right-6 z-50">
+        <button id="music-toggle" onclick="toggleMusic()" aria-label="Toggle Music" class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 text-skyAccent shadow-lg border border-skySoft flex items-center justify-center hover:scale-105 transition-all duration-300 group">
+            <i id="music-icon" class="fas fa-music text-lg md:text-xl group-hover:rotate-12 transition-transform"></i>
+        </button>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="w-full max-w-md md:max-w-3xl mx-auto min-h-screen bg-warmBg shadow-2xl relative overflow-hidden bg-pattern gold-border-overlay my-0 md:my-6 rounded-none md:rounded-3xl">
+
+        <div id="petals-container" class="absolute inset-0 pointer-events-none overflow-hidden z-20"></div>
+
+        <div class="ambient-glow w-64 h-64 md:w-96 md:h-96 bg-skySoft/40 top-10 -left-20 animate-glow"></div>
+        <div class="ambient-glow w-72 h-72 md:w-[28rem] md:h-[28rem] bg-amber-100/50 bottom-20 -right-20 animate-glow" style="animation-delay: 2s;"></div>
+
+        <!-- COVER SCREEN -->
+        <div id="cover-screen" class="fixed inset-0 z-40 w-full max-w-md md:max-w-3xl mx-auto bg-skyDeep transition-transform duration-1000 ease-in-out flex flex-col justify-between p-6 md:p-12 text-center text-white overflow-hidden md:rounded-3xl">
+            <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/d/1LasbUeGU7aDYjghESLmzm852XamPEyu3=w1000');"></div>
+            <div class="absolute inset-0 z-0 bg-gradient-to-b from-skyDeep/70 via-skyDeep/40 to-skyDeep/90"></div>
+
+            <div class="relative z-10 pt-8 md:pt-12 animate-float">
+                <svg class="w-24 h-24 md:w-32 md:h-32 mx-auto text-skySoft/60" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                    <path d="M50,10 C55,30 70,45 90,50 C70,55 55,70 50,90 C45,70 30,55 10,50 C30,45 45,30 50,10 Z" stroke-width="1.5"/>
+                    <circle cx="50" cy="50" r="5" stroke-width="1"/>
+                </svg>
+                <p class="uppercase tracking-widest text-xs md:text-sm text-skySoft mt-4 font-medium">Walimatul 'Ursy</p>
+            </div>
+
+            <div class="relative z-10 my-auto py-6">
+                <h2 class="font-serif italic text-lg md:text-2xl text-skySoft mb-2">The Wedding of</h2>
+                <h1 class="font-serif text-4xl md:text-6xl font-bold tracking-wide text-white leading-tight mb-4">
+                    Abdu <span class="text-goldSoft text-3xl md:text-5xl font-light">&</span> Ayu
+                </h1>
+                <p class="text-xs md:text-base text-skySoft/90 tracking-wide font-light max-w-xs md:max-w-md mx-auto">
+                    Senin & Selasa, 28 - 29 Desember 2026
+                </p>
+            </div>
+
+            <div class="relative z-10 pb-10 max-w-sm mx-auto w-full">
+                <p class="text-xs md:text-sm text-skySoft/80 mb-2 font-light">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                <h3 id="guestTargetName" class="text-base md:text-lg font-semibold text-goldSoft mb-4">Tamu Undangan</h3>
+                <button onclick="openInvitation()" class="w-full py-3.5 md:py-4 px-6 rounded-full bg-gradient-to-r from-skySoft to-white text-skyDeep font-medium text-sm md:text-base tracking-wide shadow-xl hover:shadow-2xl active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 group">
+                    <i class="fas fa-envelope-open text-skyAccent group-hover:rotate-12 transition-transform"></i>
+                    <span>Buka Undangan</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <main id="main-content" class="relative z-10 opacity-0 transition-opacity duration-1000">
+
+            <!-- HEADER BANNER -->
+            <header class="relative h-[65vh] md:h-[75vh] flex flex-col justify-end p-6 md:p-10 text-center overflow-hidden">
+                <div class="absolute inset-0 z-0 bg-cover bg-center transform scale-105 transition-transform duration-10000" style="background-image: url('https://lh3.googleusercontent.com/d/1LasbUeGU7aDYjghESLmzm852XamPEyu3=w1000');"></div>
+                <div class="absolute inset-0 z-0 bg-gradient-to-t from-warmBg via-warmBg/50 to-transparent"></div>
+                
+                <div data-aos="fade-up" data-aos-duration="1000" class="relative z-10 glass-card p-6 md:p-8 rounded-3xl shadow-lg border border-skySoft/40 mb-2 max-w-lg mx-auto w-full">
+                    <p class="uppercase tracking-widest text-[10px] md:text-xs text-skyAccent font-semibold mb-2">Undangan Pernikahan</p>
+                    <h1 class="font-serif text-3xl md:text-5xl font-bold text-skyDeep mb-2">Abdu & Ayu</h1>
+                    <p class="text-xs md:text-sm text-slate-500 font-light">28 & 29 Desember 2026</p>
+                </div>
+            </header>
+
+            <!-- SALAM & KALIMAT UNDANGAN -->
+            <section class="px-6 md:px-12 py-10 text-center relative z-10 max-w-2xl mx-auto">
+                <div data-aos="fade-up" data-aos-duration="800">
+                    <div class="w-12 h-12 md:w-14 md:h-14 mx-auto mb-4 rounded-full bg-skyWarm flex items-center justify-center text-skyAccent shadow-sm">
+                        <i class="fas fa-heart text-skyAccent md:text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-lg md:text-2xl font-semibold text-skyDeep mb-3">Assalamu’alaikum Wr. Wb.</h3>
+                </div>
+
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <p class="text-xs md:text-sm leading-relaxed text-slate-600 font-light mb-6">
+                        Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan syukuran pernikahan putra-putri kami. Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai.
+                    </p>
+                </div>
+
+                <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" class="glass-card p-5 md:p-6 rounded-2xl text-left border-l-4 border-l-skyAccent shadow-sm">
+                    <p class="text-xs md:text-sm italic text-slate-600 leading-relaxed">
+                        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
+                    </p>
+                    <p class="text-[11px] md:text-xs font-semibold text-skyDeep mt-3 text-right">— Q.S. Ar-Rum: 21</p>
+                </div>
+            </section>
+
+            <!-- MEMPELAI SECTION -->
+            <section class="px-6 md:px-12 py-8 relative z-10">
+                <div data-aos="fade-up" class="text-center mb-8">
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-skyDeep">Pasangan Mempelai</h2>
+                    <div class="w-12 md:w-16 h-0.5 bg-skySoft mx-auto mt-2"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div data-aos="fade-right" data-aos-duration="1000" class="glass-card p-6 md:p-8 rounded-3xl text-center space-y-3 relative overflow-hidden group hover:border-skyAccent transition-colors h-full flex flex-col justify-center">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-skySoft/30 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:scale-110"></div>
+                        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full bg-skySoft/60 text-skyDeep flex items-center justify-center text-xl md:text-2xl font-serif font-bold border border-skySoft">
+                            A
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl md:text-2xl font-bold text-skyDeep">Abdulloh Ma'ruf, S.Pd.</h3>
+                            <p class="text-xs md:text-sm text-skyAccent font-medium tracking-wide">(Abdu)</p>
+                        </div>
+                        <p class="text-xs md:text-sm text-slate-600 font-light leading-relaxed">
+                            Putra dari <br>
+                            <span class="font-medium text-slate-700">Bapak Abdun Nasyid</span> <br>& <span class="font-medium text-slate-700">Ibu Siti Fatimatuz Zahroh</span>
+                        </p>
+                    </div>
+
+                    <div data-aos="fade-left" data-aos-duration="1000" class="glass-card p-6 md:p-8 rounded-3xl text-center space-y-3 relative overflow-hidden group hover:border-skyAccent transition-colors h-full flex flex-col justify-center">
+                        <div class="absolute top-0 left-0 w-20 h-20 bg-skySoft/30 rounded-br-full -ml-4 -mt-4 transition-all group-hover:scale-110"></div>
+                        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full bg-skySoft/60 text-skyDeep flex items-center justify-center text-xl md:text-2xl font-serif font-bold border border-skySoft">
+                            A
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl md:text-2xl font-bold text-skyDeep">Azhar Ayu Budiahwati, S.Pd.</h3>
+                            <p class="text-xs md:text-sm text-skyAccent font-medium tracking-wide">(Ayu)</p>
+                        </div>
+                        <p class="text-xs md:text-sm text-slate-600 font-light leading-relaxed">
+                            Putri dari <br>
+                            <span class="font-medium text-slate-700">Bapak Budi Santoso, S.Sos.</span> <br>& <span class="font-medium text-slate-700">Ibu Ama Yuanis, S.Pd.</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RUNDOWN & GALERI ACARA -->
+            <section class="px-6 md:px-12 py-8 relative z-10">
+                <div data-aos="fade-up" class="text-center mb-8">
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-skyDeep">Susunan Acara</h2>
+                    <p class="text-xs md:text-sm text-slate-500 font-light mt-1">Rangkaian Prosesi Hari Bahagia Kami</p>
+                    <div class="w-12 md:w-16 h-0.5 bg-skySoft mx-auto mt-2"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 1. SESI LAMARAN -->
+                    <div data-aos="fade-up" data-aos-duration="800" class="glass-card rounded-3xl overflow-hidden shadow-md group border border-skySoft/60 hover:shadow-xl transition-all">
+                        <div class="relative h-48 md:h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/d/1lGeuoGAb6VwMONUkhmlHEbD7hrIEbEz_=w800" alt="Sesi Lamaran" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-skyDeep/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-skyAccent/90 rounded-full backdrop-blur-sm"><i class="far fa-clock mr-1"></i> 07.00 - 08.00 WIB</span>
+                            </div>
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-serif text-xl font-bold text-skyDeep mb-1">Sesi Lamaran</h3>
+                            <p class="text-xs text-slate-600 font-light">Serah terima seserahan & tukar cincin secara kekeluargaan.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. SESI AKAD NIKAH -->
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="150" class="glass-card rounded-3xl overflow-hidden shadow-md group border border-skySoft/60 hover:shadow-xl transition-all">
+                        <div class="relative h-48 md:h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/d/17rPZQGwBH00nI4xdzFY1FSbupYh9YC51=w800" alt="Sesi Akad Nikah" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-skyDeep/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-skyAccent/90 rounded-full backdrop-blur-sm"><i class="far fa-clock mr-1"></i> 08.00 - 09.00 WIB</span>
+                            </div>
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-serif text-xl font-bold text-skyDeep mb-1">Sesi Akad Nikah</h3>
+                            <p class="text-xs text-slate-600 font-light">Persiapan, pemeriksaan berkas KUA, & pengucapan Ijab Kabul.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. TEMU MANTEN -->
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="glass-card rounded-3xl overflow-hidden shadow-md group border border-skySoft/60 hover:shadow-xl transition-all">
+                        <div class="relative h-48 md:h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/d/1p4_nCMRDGOOPKFf9RLpAOMjhOQVJdU-E=w800" alt="Temu Manten" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-skyDeep/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-skyAccent/90 rounded-full backdrop-blur-sm"><i class="far fa-clock mr-1"></i> 09.00 - 11.00 WIB</span>
+                            </div>
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-serif text-xl font-bold text-skyDeep mb-1">Prosesi Temu Manten</h3>
+                            <p class="text-xs text-slate-600 font-light">Pertemuan keluarga, pengiring, dan persiapan resepsi.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. RESEPSI -->
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="450" class="glass-card rounded-3xl overflow-hidden shadow-md group border border-skySoft/60 hover:shadow-xl transition-all">
+                        <div class="relative h-48 md:h-56 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/d/1hvZtziOX0wShe1Ucq9VkL52nWpjMIy6I=w800" alt="Sesi Resepsi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-skyDeep/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-skyAccent/90 rounded-full backdrop-blur-sm"><i class="far fa-clock mr-1"></i> 11.00 - 23.00 WIB</span>
+                            </div>
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-serif text-xl font-bold text-skyDeep mb-1">Sesi Resepsi & Ramah Tamah</h3>
+                            <p class="text-xs text-slate-600 font-light">Penyambutan tamu undangan, santap bersama, & foto bahagia.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COUNTDOWN TIMER SECTION -->
+            <section class="px-6 md:px-12 py-8 relative z-10 max-w-2xl mx-auto">
+                <div data-aos="fade-up" data-aos-duration="1000" class="glass-card p-6 md:p-8 rounded-3xl text-center bg-gradient-to-b from-skyWarm to-white shadow-sm">
+                    <h3 class="font-serif text-lg md:text-xl font-semibold text-skyDeep mb-4">Menghitung Hari</h3>
+                    <div class="grid grid-cols-4 gap-2 md:gap-4 text-center" id="countdown">
+                        <div class="bg-white p-3 md:p-4 rounded-2xl shadow-sm border border-skySoft">
+                            <span id="days" class="block font-serif text-xl md:text-3xl font-bold text-skyDeep">00</span>
+                            <span class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider">Hari</span>
+                        </div>
+                        <div class="bg-white p-3 md:p-4 rounded-2xl shadow-sm border border-skySoft">
+                            <span id="hours" class="block font-serif text-xl md:text-3xl font-bold text-skyDeep">00</span>
+                            <span class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider">Jam</span>
+                        </div>
+                        <div class="bg-white p-3 md:p-4 rounded-2xl shadow-sm border border-skySoft">
+                            <span id="minutes" class="block font-serif text-xl md:text-3xl font-bold text-skyDeep">00</span>
+                            <span class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider">Menit</span>
+                        </div>
+                        <div class="bg-white p-3 md:p-4 rounded-2xl shadow-sm border border-skySoft">
+                            <span id="seconds" class="block font-serif text-xl md:text-3xl font-bold text-skyDeep">00</span>
+                            <span class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider">Detik</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EVENTS SECTION -->
+            <section class="px-6 md:px-12 py-8 relative z-10">
+                <div data-aos="fade-up" class="text-center mb-6">
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-skyDeep">Lokasi Acara</h2>
+                    <p class="text-xs md:text-sm text-slate-500 font-light mt-1">Kehadiran Anda adalah kebahagiaan bagi kami</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div data-aos="fade-up" data-aos-duration="1000" class="glass-card p-6 md:p-8 rounded-3xl relative overflow-hidden border border-skySoft/60 shadow-md flex flex-col justify-between">
+                        <div>
+                            <div class="inline-block px-3 py-1 bg-skySoft/80 rounded-full text-[11px] md:text-xs font-semibold text-skyDeep mb-3">
+                                Resepsi Pertama
+                            </div>
+                            <h3 class="font-serif text-xl md:text-2xl font-bold text-skyDeep mb-2">Mojokerto</h3>
+                            
+                            <div class="space-y-2 text-xs md:text-sm text-slate-600 mb-6 font-light">
+                                <div class="flex items-center gap-2">
+                                    <i class="far fa-calendar-alt text-skyAccent w-4"></i>
+                                    <span>Senin, 28 Desember 2026</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="far fa-clock text-skyAccent w-4"></i>
+                                    <span>Pukul 11.00 - 23.00 WIB</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-map-marker-alt text-skyAccent w-4 mt-0.5"></i>
+                                    <span>Mojopilang, Kemlagi, Mojokerto</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://maps.app.goo.gl/mpitW5QYpSGeCHZr5?g_st=aw" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-skyDeep text-white font-medium text-xs md:text-sm flex items-center justify-center gap-2 hover:bg-skyDeep/90 active:scale-95 transition-all shadow-md">
+                            <i class="fas fa-location-dot text-goldSoft"></i>
+                            <span>Buka Peta Lokasi (Mojokerto)</span>
+                        </a>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="glass-card p-6 md:p-8 rounded-3xl relative overflow-hidden border border-skySoft/60 shadow-md flex flex-col justify-between">
+                        <div>
+                            <div class="inline-block px-3 py-1 bg-skySoft/80 rounded-full text-[11px] md:text-xs font-semibold text-skyDeep mb-3">
+                                Resepsi Kedua
+                            </div>
+                            <h3 class="font-serif text-xl md:text-2xl font-bold text-skyDeep mb-2">Jombang</h3>
+                            
+                            <div class="space-y-2 text-xs md:text-sm text-slate-600 mb-6 font-light">
+                                <div class="flex items-center gap-2">
+                                    <i class="far fa-calendar-alt text-skyAccent w-4"></i>
+                                    <span>Selasa, 29 Desember 2026</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="far fa-clock text-skyAccent w-4"></i>
+                                    <span>Pukul 11.00 - 23.00 WIB</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-home text-skyAccent w-4 mt-0.5"></i>
+                                    <span>Bandung, Diwek, Jombang</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://maps.app.goo.gl/NvcCmEFCkx2ajhBC6?g_st=aw" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-skyDeep text-white font-medium text-xs md:text-sm flex items-center justify-center gap-2 hover:bg-skyDeep/90 active:scale-95 transition-all shadow-md">
+                            <i class="fas fa-location-dot text-goldSoft"></i>
+                            <span>Buka Peta Lokasi (Jombang)</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RSVP & WISHES SECTION -->
+            <section class="px-6 md:px-12 py-8 relative z-10 max-w-2xl mx-auto">
+                <div data-aos="fade-up" data-aos-duration="1000" class="glass-card p-6 md:p-8 rounded-3xl space-y-4">
+                    <div class="text-center">
+                        <h3 class="font-serif text-lg md:text-xl font-bold text-skyDeep">Konfirmasi Kehadiran & Doa</h3>
+                        <p class="text-xs md:text-sm text-slate-500 font-light mt-1">Berikan konfirmasi kehadiran serta doa terbaik Anda</p>
+                    </div>
+
+                    <form id="rsvpForm" onsubmit="handleRSVP(event)" class="space-y-3 pt-2">
+                        <div>
+                            <label class="block text-[11px] md:text-xs font-semibold text-skyDeep mb-1">Nama Lengkap</label>
+                            <input type="text" id="guestName" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl bg-white border border-skySoft text-xs md:text-sm focus:outline-none focus:border-skyAccent text-skyDeep placeholder-slate-400">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-[11px] md:text-xs font-semibold text-skyDeep mb-1">Konfirmasi Kehadiran</label>
+                                <select id="guestAttendance" onchange="toggleLocationSelect()" required class="w-full px-4 py-3 rounded-xl bg-white border border-skySoft text-xs md:text-sm focus:outline-none focus:border-skyAccent text-skyDeep">
+                                    <option value="Hadir">Hadir</option>
+                                    <option value="Tidak Hadir">Tidak Hadir</option>
+                                </select>
+                            </div>
+
+                            <div id="locationGroup">
+                                <label class="block text-[11px] md:text-xs font-semibold text-skyDeep mb-1">Lokasi Kehadiran</label>
+                                <select id="guestLocation" class="w-full px-4 py-3 rounded-xl bg-white border border-skySoft text-xs md:text-sm focus:outline-none focus:border-skyAccent text-skyDeep">
+                                    <option value="Mojokerto (Senin, 28 Des)">Mojokerto (Senin, 28 Des)</option>
+                                    <option value="Jombang (Selasa, 29 Des)">Jombang (Selasa, 29 Des)</option>
+                                    <option value="Mojokerto & Jombang">Keduanya (Mojokerto & Jombang)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] md:text-xs font-semibold text-skyDeep mb-1">Ucapan & Doa Restu</label>
+                            <textarea id="guestMessage" required rows="3" placeholder="Tuliskan ucapan & doa..." class="w-full px-4 py-3 rounded-xl bg-white border border-skySoft text-xs md:text-sm focus:outline-none focus:border-skyAccent text-skyDeep placeholder-slate-400"></textarea>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full py-3 md:py-3.5 rounded-xl bg-skyAccent text-white font-medium text-xs md:text-sm shadow-md hover:bg-skyAccent/90 active:scale-95 transition-all flex items-center justify-center gap-2">
+                            <span>Kirim Konfirmasi & Ucapan</span>
+                        </button>
+                    </form>
+
+                    <!-- WISHES DISPLAY LIST -->
+                    <div id="wishesList" class="space-y-3 pt-4 max-h-72 overflow-y-auto">
+                        <div class="bg-white/80 p-3 rounded-xl border border-skySoft/40 text-xs md:text-sm">
+                            <span class="font-semibold text-skyDeep">Keluarga Besar</span>
+                            <p class="text-slate-600 font-light text-[11px] md:text-xs mt-1">Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fii khair. Selamat untuk Abdu & Ayu!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="px-6 py-10 text-center space-y-4 relative z-10">
+                <div class="w-8 md:w-12 h-0.5 bg-skySoft mx-auto"></div>
+                <p class="font-serif text-base md:text-xl font-semibold text-skyDeep">Abdu & Ayu</p>
+                <p class="text-[10px] md:text-xs text-slate-400 font-light uppercase tracking-widest">Terima Kasih Atas Doa & Restunya</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- AOS SCRIPT & KONTROL SCRIPT -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        const SCRIPT_URL = "GANTI_DENGAN_URL_GOOGLE_SCRIPT_KAMU";
+
+        const audio = document.getElementById('wedding-audio');
+        let isPlaying = false;
+
+        // FUNGSI UTAMA UNTUK MENGESET NAMA TAMU KE COVER & FORM RSVP
+        function setGuestName(name) {
+            if (!name) return;
+            const decodedName = decodeURIComponent(name.replace(/\+/g, ' ')).trim();
+            if (!decodedName) return;
+
+            const targetEl = document.getElementById('guestTargetName');
+            const inputEl = document.getElementById('guestName');
+            
+            if (targetEl) targetEl.innerText = decodedName;
+            if (inputEl) inputEl.value = decodedName;
+        }
+
+        // ROBUT MULTI-FALLBACK DETECTION UNTUK GOOGLE SITES & IFRAME EMBED
+        function detectGuestName() {
+            let guestName = null;
+
+            // Helper untuk mengekstrak parameter ('to', 'nama', atau 'n')
+            const extractParam = (searchOrHash) => {
+                if (!searchOrHash) return null;
+                // Bersihkan hash atau query string
+                const cleanStr = searchOrHash.replace(/^[?#]/, '');
+                const params = new URLSearchParams(cleanStr);
+                return params.get('to') || params.get('nama') || params.get('n');
+            };
+
+            // 1. Cek parameter pada URL iframe sendiri (?to=... atau #to=...)
+            guestName = extractParam(window.location.search) || extractParam(window.location.hash);
+
+            // 2. Cek document.referrer (URL induk tempat iframe disematkan)
+            if (!guestName && document.referrer) {
+                try {
+                    const refUrl = new URL(document.referrer);
+                    guestName = extractParam(refUrl.search) || extractParam(refUrl.hash);
+                } catch (e) {
+                    console.log("Gagal membaca referrer URL:", e);
+                }
+            }
+
+            // 3. Cek parent window location (jika same-origin atau diizinkan browser)
+            if (!guestName) {
+                try {
+                    if (window.parent && window.parent.location) {
+                        guestName = extractParam(window.parent.location.search) || extractParam(window.parent.location.hash);
+                    }
+                } catch (e) {
+                    console.log("Parent origin dibatasi oleh kebijakan keamanan browser (Cross-Origin Frame access restricted).");
+                }
+            }
+
+            // Terapkan nama tamu jika ditemukan
+            if (guestName) {
+                setGuestName(guestName);
+            }
+        }
+
+        // Jalankan deteksi saat halaman dimuat
+        detectGuestName();
+
+        // 4. LISTENER postMessage (Menerima pesan nama dari Google Sites parent script)
+        window.addEventListener('message', function(event) {
+            if (event.data) {
+                if (typeof event.data === 'string') {
+                    try {
+                        const parsed = JSON.parse(event.data);
+                        if (parsed.to || parsed.nama) setGuestName(parsed.to || parsed.nama);
+                    } catch(e) {
+                        setGuestName(event.data);
+                    }
+                } else if (typeof event.data === 'object') {
+                    const name = event.data.to || event.data.nama || event.data.name;
+                    if (name) setGuestName(name);
+                }
+            }
+        });
+
+        function toggleMusic() {
+            const icon = document.getElementById('music-icon');
+            if (!audio) return;
+
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+                if (icon) {
+                    icon.className = 'fas fa-volume-mute text-lg md:text-xl text-slate-400';
+                    icon.style.animation = 'none';
+                }
+            } else {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    if (icon) {
+                        icon.className = 'fas fa-music text-lg md:text-xl text-skyAccent animate-spin';
+                        icon.style.animationDuration = '4s';
+                    }
+                }).catch(err => {
+                    console.log("Audio gagal diputar:", err);
+                });
+            }
+        }
+
+        function openInvitation() {
+            if (audio) {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    const icon = document.getElementById('music-icon');
+                    if (icon) {
+                        icon.className = 'fas fa-music text-lg md:text-xl text-skyAccent animate-spin';
+                        icon.style.animationDuration = '4s';
+                    }
+                }).catch(err => {
+                    console.log("Autoplay diblokir oleh browser:", err);
+                });
+            }
+
+            const cover = document.getElementById('cover-screen');
+            const main = document.getElementById('main-content');
+            
+            if (cover) cover.style.transform = 'translateY(-100%)';
+            if (main) {
+                main.classList.remove('opacity-0');
+                main.classList.add('opacity-100');
+            }
+
+            setTimeout(() => {
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        once: true,
+                        duration: 800,
+                        easing: 'ease-in-out'
+                    });
+                    AOS.refresh();
+                }
+            }, 300);
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleLocationSelect() {
+            const attendance = document.getElementById('guestAttendance').value;
+            const locationGroup = document.getElementById('locationGroup');
+            if (attendance === 'Tidak Hadir') {
+                locationGroup.style.display = 'none';
+            } else {
+                locationGroup.style.display = 'block';
+            }
+        }
+
+        function createPetals() {
+            const container = document.getElementById('petals-container');
+            if (!container) return;
+            const petalCount = 12;
+
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                const size = Math.random() * 8 + 8;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size * 1.4}px`;
+                petal.style.left = `${Math.random() * 100}%`;
+                petal.style.animationDuration = `${Math.random() * 5 + 7}s`;
+                petal.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(petal);
+            }
+        }
+        createPetals();
+
+        function updateCountdown() {
+            const targetDate = new Date("Dec 28, 2026 11:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            const daysEl = document.getElementById('days');
+            if (!daysEl) return;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                daysEl.innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = "<div class='col-span-4 text-xs md:text-sm text-skyAccent font-semibold'>Hari Bahagia Telah Tiba</div>";
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        function loadWishes() {
+            if (!SCRIPT_URL || SCRIPT_URL === "GANTI_DENGAN_URL_GOOGLE_SCRIPT_KAMU") return;
+            
+            fetch(SCRIPT_URL)
+                .then(res => res.json())
+                .then(data => {
+                    const wishesList = document.getElementById('wishesList');
+                    wishesList.innerHTML = ''; 
+                    data.reverse().forEach(item => {
+                        const wishCard = document.createElement('div');
+                        wishCard.className = 'bg-white/80 p-3.5 rounded-xl border border-skySoft/40 text-xs md:text-sm transition-all mb-2';
+                        
+                        let badgeColor = item.attendance === 'Hadir' ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800';
+                        let locationText = (item.attendance === 'Hadir' && item.location) ? ` • ${item.location}` : '';
+
+                        wishCard.innerHTML = `
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="font-semibold text-skyDeep">${escapeHtml(item.name)}</span>
+                                <span class="text-[10px] px-2 py-0.5 rounded-full ${badgeColor} font-medium">${escapeHtml(item.attendance)}${escapeHtml(locationText)}</span>
+                            </div>
+                            <p class="text-slate-600 font-light text-[11px] md:text-xs mt-1">${escapeHtml(item.message)}</p>
+                        `;
+                        wishesList.appendChild(wishCard);
+                    });
+                })
+                .catch(err => console.log("Gagal memuat ucapan:", err));
+        }
+
+        function handleRSVP(e) {
+            e.preventDefault();
+            const name = document.getElementById('guestName').value;
+            const attendance = document.getElementById('guestAttendance').value;
+            const location = attendance === 'Hadir' ? document.getElementById('guestLocation').value : '-';
+            const message = document.getElementById('guestMessage').value;
+
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerText = 'Mengirim...';
+
+            if (SCRIPT_URL && SCRIPT_URL !== "GANTI_DENGAN_URL_GOOGLE_SCRIPT_KAMU") {
+                fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify({ name: name, attendance: attendance, location: location, message: message })
+                })
+                .then(res => res.json())
+                .then(response => {
+                    btn.disabled = false;
+                    btn.innerText = 'Kirim Konfirmasi & Ucapan';
+                    loadWishes(); 
+                    document.getElementById('guestName').value = '';
+                    document.getElementById('guestMessage').value = '';
+                })
+                .catch(err => {
+                    btn.disabled = false;
+                    btn.innerText = 'Kirim Konfirmasi & Ucapan';
+                    console.log("Gagal mengirim:", err);
+                });
+            } else {
+                btn.disabled = false;
+                btn.innerText = 'Kirim Konfirmasi & Ucapan';
+                const wishesList = document.getElementById('wishesList');
+                const wishCard = document.createElement('div');
+                wishCard.className = 'bg-white/80 p-3.5 rounded-xl border border-skySoft/40 text-xs md:text-sm transition-all mb-2';
+                let badgeColor = attendance === 'Hadir' ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800';
+                let locationText = (attendance === 'Hadir' && location) ? ` • ${location}` : '';
+
+                wishCard.innerHTML = `
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="font-semibold text-skyDeep">${escapeHtml(name)}</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full ${badgeColor} font-medium">${escapeHtml(attendance)}${escapeHtml(locationText)}</span>
+                    </div>
+                    <p class="text-slate-600 font-light text-[11px] md:text-xs mt-1">${escapeHtml(message)}</p>
+                `;
+                wishesList.prepend(wishCard);
+                document.getElementById('guestName').value = '';
+                document.getElementById('guestMessage').value = '';
+            }
+        }
+
+        function escapeHtml(text) {
+            if(!text) return '';
+            return text.replace(/[&<>"']/g, function(m) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#039;'
+                }[m];
+            });
+        }
+
+        loadWishes();
+    </script>
+</body>
+</html>
