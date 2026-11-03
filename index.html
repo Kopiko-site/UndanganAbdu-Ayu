@@ -7,6 +7,7 @@
 
     <!-- Open Graph / WhatsApp Preview Meta Tags -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kopiko-site.github.io/UndanganAbdu-Ayu/">
     <meta property="og:title" content="Undangan Pernikahan Abdu & Ayu">
     <meta property="og:description" content="Senin & Selasa, 28 - 29 Desember 2026. Kehadiran dan doa restu Anda merupakan kehormatan dan kebahagiaan bagi kami.">
     <meta property="og:image" content="https://lh3.googleusercontent.com/d/1LasbUeGU7aDYjghESLmzm852XamPEyu3=w1000">
@@ -22,10 +23,10 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Playfair Display, Plus Jakarta Sans, & Sacramento for Aesthetic Names -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- AOS CSS Animation -->
@@ -46,7 +47,8 @@
                     },
                     fontFamily: {
                         serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        aesthetic: ['"Sacramento"', 'cursive', 'serif']
                     }
                 }
             }
@@ -119,7 +121,7 @@
 </head>
 <body class="font-sans text-skyDeep bg-warmBg antialiased selection:bg-skySoft selection:text-skyDeep overflow-x-hidden">
 
-    <!-- AUDIO MP3 LANGSUNG DARI CATBOX -->
+    <!-- AUDIO MP3 CATBOX -->
     <audio id="wedding-audio" loop preload="auto">
         <source src="https://files.catbox.moe/6uvxqf.mp3" type="audio/mpeg">
     </audio>
@@ -163,7 +165,13 @@
             </div>
 
             <div class="relative z-10 pb-10 max-w-sm mx-auto w-full">
-                <p class="text-xs md:text-sm text-skySoft/80 mb-4 font-light">Kepada Bapak/Ibu/Saudara/i</p>
+                <p class="text-xs md:text-sm text-skySoft/80 mb-2 font-light">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+
+                <!-- NAMA TAMU DENGAN FONT ESTETIK SACRAMENTO -->
+                <h3 id="guestTargetName" class="font-aesthetic text-3xl md:text-5xl font-bold text-goldSoft drop-shadow-md mb-4 py-1 tracking-wide leading-tight">
+                    Tamu Undangan
+                </h3>
+
                 <button onclick="openInvitation()" class="w-full py-3.5 md:py-4 px-6 rounded-full bg-gradient-to-r from-skySoft to-white text-skyDeep font-medium text-sm md:text-base tracking-wide shadow-xl hover:shadow-2xl active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 group">
                     <i class="fas fa-envelope-open text-skyAccent group-hover:rotate-12 transition-transform"></i>
                     <span>Buka Undangan</span>
@@ -218,7 +226,6 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                     <div data-aos="fade-right" data-aos-duration="1000" class="glass-card p-6 md:p-8 rounded-3xl text-center space-y-3 relative overflow-hidden group hover:border-skyAccent transition-colors h-full flex flex-col justify-center">
-                        <div class="absolute top-0 right-0 w-20 h-20 bg-skySoft/30 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:scale-110"></div>
                         <div class="w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full bg-skySoft/60 text-skyDeep flex items-center justify-center text-xl md:text-2xl font-serif font-bold border border-skySoft">
                             A
                         </div>
@@ -233,7 +240,6 @@
                     </div>
 
                     <div data-aos="fade-left" data-aos-duration="1000" class="glass-card p-6 md:p-8 rounded-3xl text-center space-y-3 relative overflow-hidden group hover:border-skyAccent transition-colors h-full flex flex-col justify-center">
-                        <div class="absolute top-0 left-0 w-20 h-20 bg-skySoft/30 rounded-br-full -ml-4 -mt-4 transition-all group-hover:scale-110"></div>
                         <div class="w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full bg-skySoft/60 text-skyDeep flex items-center justify-center text-xl md:text-2xl font-serif font-bold border border-skySoft">
                             A
                         </div>
@@ -249,7 +255,7 @@
                 </div>
             </section>
 
-            <!-- RUNDOWN & GALERI ACARA (SEKSI BARU) -->
+            <!-- RUNDOWN ACARA -->
             <section class="px-6 md:px-12 py-8 relative z-10">
                 <div data-aos="fade-up" class="text-center mb-8">
                     <h2 class="font-serif text-2xl md:text-3xl font-bold text-skyDeep">Susunan Acara</h2>
@@ -257,25 +263,10 @@
                     <div class="w-12 md:w-16 h-0.5 bg-skySoft mx-auto mt-2"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- 1. SESI LAMARAN -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- 1. SESI AKAD NIKAH -->
                     <div data-aos="fade-up" data-aos-duration="800" class="glass-card rounded-3xl overflow-hidden shadow-md group border border-skySoft/60 hover:shadow-xl transition-all">
-                        <div class="relative h-48 md:h-56 overflow-hidden">
-                            <img src="https://lh3.googleusercontent.com/d/1lGeuoGAb6VwMONUkhmlHEbD7hrIEbEz_=w800" alt="Sesi Lamaran" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-skyDeep/80 via-transparent to-transparent"></div>
-                            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
-                                <span class="text-xs font-semibold px-2.5 py-1 bg-skyAccent/90 rounded-full backdrop-blur-sm"><i class="far fa-clock mr-1"></i> 07.00 - 08.00 WIB</span>
-                            </div>
-                        </div>
-                        <div class="p-5 text-center">
-                            <h3 class="font-serif text-xl font-bold text-skyDeep mb-1">Sesi Lamaran</h3>
-                            <p class="text-xs text-slate-600 font-light">Serah terima seserahan & tukar cincin secara kekeluargaan.</p>
-                        </div>
-                    </div>
-
-                    <!-- 2. SESI AKAD NIKAH -->
-                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="150" class="glass-card rounded-3xl overflow-hidden shadow-md group border border-skySoft/60 hover:shadow-xl transition-all">
-                        <div class="relative h-48 md:h-56 overflow-hidden">
+                        <div class="relative h-48 overflow-hidden">
                             <img src="https://lh3.googleusercontent.com/d/17rPZQGwBH00nI4xdzFY1FSbupYh9YC51=w800" alt="Sesi Akad Nikah" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-skyDeep/80 via-transparent to-transparent"></div>
                             <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
@@ -283,14 +274,14 @@
                             </div>
                         </div>
                         <div class="p-5 text-center">
-                            <h3 class="font-serif text-xl font-bold text-skyDeep mb-1">Sesi Akad Nikah</h3>
+                            <h3 class="font-serif text-lg font-bold text-skyDeep mb-1">Akad Nikah</h3>
                             <p class="text-xs text-slate-600 font-light">Persiapan, pemeriksaan berkas KUA, & pengucapan Ijab Kabul.</p>
                         </div>
                     </div>
 
-                    <!-- 3. TEMU MANTEN -->
-                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="glass-card rounded-3xl overflow-hidden shadow-md group border border-skySoft/60 hover:shadow-xl transition-all">
-                        <div class="relative h-48 md:h-56 overflow-hidden">
+                    <!-- 2. TEMU MANTEN -->
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="150" class="glass-card rounded-3xl overflow-hidden shadow-md group border border-skySoft/60 hover:shadow-xl transition-all">
+                        <div class="relative h-48 overflow-hidden">
                             <img src="https://lh3.googleusercontent.com/d/1p4_nCMRDGOOPKFf9RLpAOMjhOQVJdU-E=w800" alt="Temu Manten" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-skyDeep/80 via-transparent to-transparent"></div>
                             <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
@@ -298,14 +289,14 @@
                             </div>
                         </div>
                         <div class="p-5 text-center">
-                            <h3 class="font-serif text-xl font-bold text-skyDeep mb-1">Prosesi Temu Manten</h3>
-                            <p class="text-xs text-slate-600 font-light">Pertemuan keluarga, pengiring, dan persiapan resepsi.</p>
+                            <h3 class="font-serif text-lg font-bold text-skyDeep mb-1">Prosesi Temu Manten</h3>
+                            <p class="text-xs text-slate-600 font-light">Pertemuan keluarga, pengiring, dan penyambutan mempelai.</p>
                         </div>
                     </div>
 
-                    <!-- 4. RESEPSI -->
-                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="450" class="glass-card rounded-3xl overflow-hidden shadow-md group border border-skySoft/60 hover:shadow-xl transition-all">
-                        <div class="relative h-48 md:h-56 overflow-hidden">
+                    <!-- 3. RESEPSI -->
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="glass-card rounded-3xl overflow-hidden shadow-md group border border-skySoft/60 hover:shadow-xl transition-all">
+                        <div class="relative h-48 overflow-hidden">
                             <img src="https://lh3.googleusercontent.com/d/1hvZtziOX0wShe1Ucq9VkL52nWpjMIy6I=w800" alt="Sesi Resepsi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-skyDeep/80 via-transparent to-transparent"></div>
                             <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
@@ -313,7 +304,7 @@
                             </div>
                         </div>
                         <div class="p-5 text-center">
-                            <h3 class="font-serif text-xl font-bold text-skyDeep mb-1">Sesi Resepsi & Ramah Tamah</h3>
+                            <h3 class="font-serif text-lg font-bold text-skyDeep mb-1">Resepsi & Ramah Tamah</h3>
                             <p class="text-xs text-slate-600 font-light">Penyambutan tamu undangan, santap bersama, & foto bahagia.</p>
                         </div>
                     </div>
@@ -359,7 +350,6 @@
                                 Resepsi Pertama
                             </div>
                             <h3 class="font-serif text-xl md:text-2xl font-bold text-skyDeep mb-2">Mojokerto</h3>
-                            
                             <div class="space-y-2 text-xs md:text-sm text-slate-600 mb-6 font-light">
                                 <div class="flex items-center gap-2">
                                     <i class="far fa-calendar-alt text-skyAccent w-4"></i>
@@ -375,7 +365,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <a href="https://maps.app.goo.gl/mpitW5QYpSGeCHZr5?g_st=aw" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-skyDeep text-white font-medium text-xs md:text-sm flex items-center justify-center gap-2 hover:bg-skyDeep/90 active:scale-95 transition-all shadow-md">
                             <i class="fas fa-location-dot text-goldSoft"></i>
                             <span>Buka Peta Lokasi (Mojokerto)</span>
@@ -388,7 +377,6 @@
                                 Resepsi Kedua
                             </div>
                             <h3 class="font-serif text-xl md:text-2xl font-bold text-skyDeep mb-2">Jombang</h3>
-                            
                             <div class="space-y-2 text-xs md:text-sm text-slate-600 mb-6 font-light">
                                 <div class="flex items-center gap-2">
                                     <i class="far fa-calendar-alt text-skyAccent w-4"></i>
@@ -404,7 +392,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <a href="https://maps.app.goo.gl/NvcCmEFCkx2ajhBC6?g_st=aw" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-skyDeep text-white font-medium text-xs md:text-sm flex items-center justify-center gap-2 hover:bg-skyDeep/90 active:scale-95 transition-all shadow-md">
                             <i class="fas fa-location-dot text-goldSoft"></i>
                             <span>Buka Peta Lokasi (Jombang)</span>
@@ -479,10 +466,71 @@
     <!-- AOS SCRIPT & KONTROL SCRIPT -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        const SCRIPT_URL = "GANTI_DENGAN_URL_GOOGLE_SCRIPT_KAMU";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwZwnp-fQEbb7XwqBdxmVO6UusIcKTu9BX15b2RmhLzBWG9dtfzNhhdPIhlPSfK25E0Dw/exec";
 
         const audio = document.getElementById('wedding-audio');
         let isPlaying = false;
+
+        function setGuestName(name) {
+            if (!name) return;
+            const decodedName = decodeURIComponent(name.replace(/\+/g, ' ')).trim();
+            if (!decodedName) return;
+
+            const targetEl = document.getElementById('guestTargetName');
+            const inputEl = document.getElementById('guestName');
+
+            if (targetEl) targetEl.innerText = decodedName;
+            if (inputEl) inputEl.value = decodedName;
+        }
+
+        function detectGuestName() {
+            let guestName = null;
+
+            const extractParam = (searchOrHash) => {
+                if (!searchOrHash) return null;
+                const cleanStr = searchOrHash.replace(/^[?#]/, '');
+                const params = new URLSearchParams(cleanStr);
+                return params.get('to') || params.get('nama') || params.get('n');
+            };
+
+            guestName = extractParam(window.location.search) || extractParam(window.location.hash);
+
+            if (!guestName && document.referrer) {
+                try {
+                    const refUrl = new URL(document.referrer);
+                    guestName = extractParam(refUrl.search) || extractParam(refUrl.hash);
+                } catch (e) {}
+            }
+
+            if (!guestName) {
+                try {
+                    if (window.parent && window.parent.location) {
+                        guestName = extractParam(window.parent.location.search) || extractParam(window.parent.location.hash);
+                    }
+                } catch (e) {}
+            }
+
+            if (guestName) {
+                setGuestName(guestName);
+            }
+        }
+        detectGuestName();
+
+        window.addEventListener('message', function(event) {
+            if (event.data) {
+                if (typeof event.data === 'string') {
+                    try {
+                        const parsed = JSON.parse(event.data);
+                        if (parsed.to || parsed.nama) setGuestName(parsed.to || parsed.nama);
+                    } catch(e) {
+                        setGuestName(event.data);
+                    }
+                } else if (typeof event.data === 'object') {
+                    const name = event.data.to || event.data.nama || event.data.name;
+                    if (name) setGuestName(name);
+                }
+            }
+        });
 
         function toggleMusic() {
             const icon = document.getElementById('music-icon');
