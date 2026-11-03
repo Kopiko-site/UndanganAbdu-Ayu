@@ -7,13 +7,23 @@
 
     <!-- Open Graph / WhatsApp Preview Meta Tags -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kopiko-site.github.io/UndanganAbdu-Ayu/">
     <meta property="og:title" content="Undangan Pernikahan Abdu & Ayu">
     <meta property="og:description" content="Senin & Selasa, 28 - 29 Desember 2026. Kehadiran dan doa restu Anda merupakan kehormatan dan kebahagiaan bagi kami.">
     <meta property="og:image" content="https://lh3.googleusercontent.com/d/1LasbUeGU7aDYjghESLmzm852XamPEyu3=w1000">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="667">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Undangan Pernikahan Abdu & Ayu">
+    <meta name="twitter:description" content="Senin & Selasa, 28 - 29 Desember 2026. Kehadiran dan doa restu Anda merupakan kehormatan dan kebahagiaan bagi kami.">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1LasbUeGU7aDYjghESLmzm852XamPEyu3=w1000">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Playfair, Plus Jakarta Sans, & Sacramento for Aesthetic Names -->
+    <!-- Google Fonts: Playfair Display, Plus Jakarta Sans, & Sacramento for Aesthetic Names -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
@@ -157,7 +167,7 @@
             <div class="relative z-10 pb-10 max-w-sm mx-auto w-full">
                 <p class="text-xs md:text-sm text-skySoft/80 mb-2 font-light">Kepada Yth. Bapak/Ibu/Saudara/i</p>
 
-                <!-- NAMA TAMU DENGAN FONT ESTETIK CAKAP & ANGGUN -->
+                <!-- NAMA TAMU DENGAN FONT ESTETIK SACRAMENTO -->
                 <h3 id="guestTargetName" class="font-aesthetic text-3xl md:text-5xl font-bold text-goldSoft drop-shadow-md mb-4 py-1 tracking-wide leading-tight">
                     Tamu Undangan
                 </h3>
@@ -245,7 +255,7 @@
                 </div>
             </section>
 
-            <!-- RUNDOWN ACARA (SESI LAMARAN SUDAH DIHAPUS) -->
+            <!-- RUNDOWN ACARA -->
             <section class="px-6 md:px-12 py-8 relative z-10">
                 <div data-aos="fade-up" class="text-center mb-8">
                     <h2 class="font-serif text-2xl md:text-3xl font-bold text-skyDeep">Susunan Acara</h2>
@@ -456,42 +466,46 @@
     <!-- AOS SCRIPT & KONTROL SCRIPT -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        const SCRIPT_URL = "GANTI_DENGAN_URL_GOOGLE_SCRIPT_KAMU";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwZwnp-fQEbb7XwqBdxmVO6UusIcKTu9BX15b2RmhLzBWG9dtfzNhhdPIhlPSfK25E0Dw/exec";
 
         const audio = document.getElementById('wedding-audio');
         let isPlaying = false;
 
         function setGuestName(name) {
             if (!name) return;
-            const decodedName = decodeURIComponent(name.replace(/\+/g, ' '));
+            const decodedName = decodeURIComponent(name.replace(/\+/g, ' ')).trim();
+            if (!decodedName) return;
+
             const targetEl = document.getElementById('guestTargetName');
             const inputEl = document.getElementById('guestName');
-            
+
             if (targetEl) targetEl.innerText = decodedName;
             if (inputEl) inputEl.value = decodedName;
         }
 
         function detectGuestName() {
-            const currentParams = new URLSearchParams(window.location.search);
-            let guestName = currentParams.get('to') || currentParams.get('nama') || currentParams.get('n');
+            let guestName = null;
 
-            if (!guestName && window.location.hash) {
-                const hashParams = new URLSearchParams(window.location.hash.substring(1));
-                guestName = hashParams.get('to') || hashParams.get('nama');
-            }
+            const extractParam = (searchOrHash) => {
+                if (!searchOrHash) return null;
+                const cleanStr = searchOrHash.replace(/^[?#]/, '');
+                const params = new URLSearchParams(cleanStr);
+                return params.get('to') || params.get('nama') || params.get('n');
+            };
+
+            guestName = extractParam(window.location.search) || extractParam(window.location.hash);
 
             if (!guestName && document.referrer) {
                 try {
                     const refUrl = new URL(document.referrer);
-                    guestName = refUrl.searchParams.get('to') || refUrl.searchParams.get('nama');
+                    guestName = extractParam(refUrl.search) || extractParam(refUrl.hash);
                 } catch (e) {}
             }
 
             if (!guestName) {
                 try {
-                    if (window.parent && window.parent.location.search) {
-                        const parentParams = new URLSearchParams(window.parent.location.search);
-                        guestName = parentParams.get('to') || parentParams.get('nama');
+                    if (window.parent && window.parent.location) {
+                        guestName = extractParam(window.parent.location.search) || extractParam(window.parent.location.hash);
                     }
                 } catch (e) {}
             }
@@ -503,8 +517,18 @@
         detectGuestName();
 
         window.addEventListener('message', function(event) {
-            if (event.data && (event.data.to || event.data.nama)) {
-                setGuestName(event.data.to || event.data.nama);
+            if (event.data) {
+                if (typeof event.data === 'string') {
+                    try {
+                        const parsed = JSON.parse(event.data);
+                        if (parsed.to || parsed.nama) setGuestName(parsed.to || parsed.nama);
+                    } catch(e) {
+                        setGuestName(event.data);
+                    }
+                } else if (typeof event.data === 'object') {
+                    const name = event.data.to || event.data.nama || event.data.name;
+                    if (name) setGuestName(name);
+                }
             }
         });
 
